@@ -5,7 +5,7 @@ I finally ordered my dotfiles a bit, making each file a bit smaller, moving to a
 Here's the current approach. `.bashr` just sources the profile:
 
 ```.bashrc
-[ -n "$PS1" ] && source ~/.config/.dotfiles/.bash_profile;
+[ -n "$PS1" ] && source ~/.bash_profile;
 ```
 
 In turn, `.bash_profile` loops through the dotfiles placed in `~/.config/.dotfiles` and source each of them:
