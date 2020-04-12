@@ -49,7 +49,7 @@ node_v() {
 
   # do we have a .nvmrc to compare against
   if [ -r ".nvmrc" ] && [ -f ".nvmrc" ]; then
-    expected="$(cat .nvmrc | tr -d '[:space:]' | tr -d '[nv]')"
+    expected="$(cat .nvmrc | tr -d '[:space:]' | tr -d '[v]')"
     if version_gt $expected $nv; then
       [ "$nv" != "" ] && echo -ne "${Red}${node_icon} ${nv}${alert_icon} "
     else
