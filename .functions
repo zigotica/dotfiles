@@ -50,7 +50,7 @@ function o() {
 # youtube downloader 
 # use: ytd video-url
 function ytd() {
-  youtube-dl -f 'bestvideo+bestaudio/best/best' --merge-output-format mkv
+  youtube-dl -f 'bestvideo+bestaudio/best/best' --merge-output-format mkv $1
 }
 
 # ffmpeg quick edits (remove n secs from start or end of file)
