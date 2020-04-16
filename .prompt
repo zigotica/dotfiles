@@ -109,10 +109,18 @@ behindahead() {
     r="$(git remote get-url origin 2>&1 | tail -n1)"
     if [[ $r != "fatal: No such remote 'origin'" ]]; then
       # check if remote branch exists
-      ub="$(git ls-remote --heads ${r} ${br} 2>&1 | sed -n 2p)"
+      # master & squashed branches compare to their remotes
+      # all other branches compare to origin/develop
+      if [[ $br != "master" ]] && [[ $br != "squashed" ]] && [[ $br != "develop" ]]; then
+        rbr="develop"
+      else
+        rbr="${br}"
+      fi
+
+      ub="$(git ls-remote --heads ${r} ${rbr} 2>&1 | sed -n 2p)"
       if [[ $ub != 0 ]] && [[ $ub != "fatal: Could not read from remote repository." ]]; then
         #echo "we have upstream branch in remote origin"
-        upstream="origin/${br}"
+        upstream="origin/${rbr}"
         bh=`git rev-list ${br}..${upstream} --count `;
         bh=`echo $bh | xargs`
         ah=`git rev-list ${upstream}..${br} --count `;
