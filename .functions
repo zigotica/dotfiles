@@ -53,6 +53,11 @@ function ytd() {
   youtube-dl -f 'bestvideo+bestaudio/best/best' --merge-output-format mkv $1
 }
 
+# only audio
+function ytda() {
+	youtube-dl -x --audio-format flac $1
+}
+
 # ffmpeg quick edits (remove n secs from start or end of file)
 # use: trims 100 'input-file.extension' 'output-file.extension' 
 function trims(){ ffmpeg -ss $1 -i "$2" -c copy "$3"; }
