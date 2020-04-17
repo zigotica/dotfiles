@@ -38,6 +38,7 @@ alias grall="git clean -df ." # removes all untracked files
 alias gp="git pull"
 alias gam="git commit -am"
 alias gpom="git push origin master"
+alias gpoh="git push origin HEAD"
 alias gc="git checkout"
 alias gcd="git checkout develop"
 alias gb="git branch --list -a"
