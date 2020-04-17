@@ -127,7 +127,11 @@ behindahead() {
         ah=`echo $ah | xargs`
 
         if [[ $bh != "0" ]] || [[ $ah != "0" ]]; then
-          echo -ne "${Red} ${merge_icon}"
+          if [[ $bh != "0" ]]; then
+            echo -ne "${Red} ${merge_icon}"
+          else
+            echo -ne "${Green} ${merge_icon}"
+          fi
         fi
         if [[ $bh != "0" ]]; then
           echo -ne "${Red} ${behind_icon}${bh}"
