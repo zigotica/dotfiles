@@ -20,7 +20,7 @@ Red="$(tput setaf 1)"
 Green="$(tput setaf 2)"
 Yellow="$(tput setaf 3)"
 Blue="$(tput setaf 4)"
-RESET=$(tput sgr0)
+RESET="$(tput sgr0)"
 
 #####################################################################################
 #                                                                              PROMPT
