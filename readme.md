@@ -1,3 +1,7 @@
+# new approach
+
+This repo is superseded by [the bare repo approach followed in tilde repo](https://github.com/zigotica/tilde). This stays here just in case you want something "simpler", but I will not be updating it.
+
 # dotfiles
 
 I finally ordered my dotfiles a bit, making each file a bit smaller, moving to a config folder, etc. 
